@@ -82,9 +82,17 @@ function renderQuiz(){
 }
 
 function rightWrong (event){
+    /*
     console.log(event.target)
     console.log(event.target.textContent)
     console.log(questions[questionIndex].answer)
+    */
+    if(questions[questionIndex].answer == event.trigger.textContent){
+        console.log("CORRECT")
+    }else {
+        console.log("Wrong")
+    }
+
 }
 
 
