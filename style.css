@@ -71,7 +71,7 @@ Inner container section
 header/ quiz intro 
 */
 .quiz-intro, main {
-    display: none;
+    display: block;
     margin-bottom: 30vh;
     
 }
@@ -101,7 +101,7 @@ questions on screen that are/were hidden
 quiz done screen
 */
 .quiz-finish-screen {
-    display: block;
+    display: none;
 }
 
 /*
@@ -109,5 +109,5 @@ highscores screen
 */
 
 .highscores-screen {
-    display: block;
+    display: none;
 }

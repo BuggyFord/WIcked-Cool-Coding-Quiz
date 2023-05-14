@@ -14,7 +14,7 @@
             <div class="top-bar">
             <button>View High Scores</button>
             <div id="timerRun">
-                <p>Timer: 00:00</p>
+                <p>Time:<span id="timer-left">100</span></p>
             </div>
             
             </div>
@@ -24,19 +24,19 @@
                 <header class="quiz-intro">
                     <h1>Coding Quiz: Let's Get it on!</h1>
                     <p>Test your knowlegde, minimally mind you, press the button to begin!</p>
-                    <button>Start Quiz</button>
+                    <button id="start-button">Start Quiz</button>
                 </header>
                 
                 <!--main quiz content-->
                 <main id="quiz">
                     <section class="question-screen">
-                        <h2>Question Here</h2>
+                        <h2 id="question-title">Question Here</h2>
                         <ul>
                             <!--This will show bt the JS-->
-                            <li><button>Answer1</button></li>
-                            <li><button>Answer2</button></li>
-                            <li><button>Answer3</button></li>
-                            <li><button>Answer4</button></li>
+                            <li><button  id="button1">Answer1</button></li>
+                            <li><button id="button2">Answer2</button></li>
+                            <li><button id="button3">Answer3</button></li>
+                            <li><button id="button4">Answer4</button></li>
                         </ul>
                     </section>
                     <section class="quiz-finish-screen">
@@ -69,6 +69,6 @@
 
 
 
-    <script src="script.js\"></script>
-</body>
+    <script src="script.js"></script>
+        
 </html>
