@@ -12,10 +12,14 @@ var fourthButt = document.getElementById("button4")
 var questionScreen = document.querySelector('.question-screen');
 var rightWrongContainer = document.getElementById('check');
 var endScreen = document.querySelector('.quiz-finish-screen');
-var submitButton = document.getElementById('initials-button');
+var submitButton = document.getElementById('btn');
 var formInitials = document.getElementById('initials-form');
-
-
+let initials = document.getElementById("initials-text");
+let initialsBtn = document.getElementById("btn");
+let initialsText = ""
+initialsBtn.addEventListener("click", function(){
+    initialsText = initials.value
+})
 var questionIndex = 0; 
 var questions = [
     {
@@ -106,7 +110,9 @@ function rightWrong (event){
     }else {
         console.log("Wrong")
         rightWrongContainer.textContent = "Wrong";
-        // timerLeft = timeLeftEl - 5;
+        timerLeft-=5;
+        timeLeftEl.textContent = timerLeft;
+       
     }
 
     // and then what? 
@@ -128,12 +134,15 @@ function rightWrong (event){
 
 }
 
-
+let score= document.getElementById("final-score");
 function endQuiz() {
     console.log("End of Questions...")
 
     // what logic happens here
-
+    
+  
+    score.textContent = "final score:" + timerLeft
+   // timeLeftEl.textContent = timerLeft;
     // we want to stop TIMER
         // we might want to grab the timeLeft and use that for the USER SCORE(?)
     clearInterval(interval)
@@ -148,11 +157,23 @@ function endQuiz() {
 
 // submitButton.addEventListener('click', function(event) { // callback logic })
 
-submitButton.addEventListener('click', captureInitals);
-//submitButton.addEventListener('submit', captureInitals);
+submitButton.addEventListener('click', captureInitials);
+//submitButton.addEventListener('submit', captureInitials);
 
-function captureInitals(event) {
+function captureInitials(event) {
     event.preventDefault();
+    
+    let score = document.getElementById("final-score");
+    localStorage.setItem("score", score.textContent)
+    
+    localStorage.setItem("initials", initialsText);
+    let scoreText = document.getElementById("score-end");
+    let initialsEnd = document.getElementById("final-initials");
+
+    initialsText.textContent = localStorage.getItem("score");
+    scoreText.textContent = localStorage.getItem("initials");
+    // alert("score: " + localStorage.getItem("score"));
+    // alert("initials: " + localStorage.getItem("initials"))
     console.log(event.target);
 }
 
